@@ -26,7 +26,7 @@ const getUserWithEmail = function(email) {
     .query(queryString, [`${email}`])
     .then((result) => {
       if (result.rows[0].name) {
-        console.log(result.rows[0].name); // users.name        
+        console.log(result.rows[0].name); // current users.name        
         return result.rows[0];
       } else {
         return null;
@@ -53,7 +53,7 @@ const getUserWithId = function(id) {
     .query(queryString, [`${id}`])
     .then((result) => {
       if (result.rows[0].id) {
-        console.log(result.rows[0].id); // user.id        
+        console.log(result.rows[0].id); // current users.id        
         return result.rows[0];
       } else {
         return null;
@@ -81,7 +81,7 @@ const addUser =  function(user) {
   return pool
   .query(queryString)
     .then((result) => {
-      console.log(result.rows[0]); // full user object
+      console.log(result.rows[0]); // current user object
       return result.rows[0];
     })
     .catch((err) => {
